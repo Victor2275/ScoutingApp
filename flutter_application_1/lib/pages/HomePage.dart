@@ -11,10 +11,16 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
     
-    
-  
 
-    return Center(
+    return Scaffold(
+    body: DecoratedBox(
+          // BoxDecoration takes the image
+          decoration: BoxDecoration(
+            // Image set to background of the body
+            image: DecorationImage(
+                image: AssetImage("images/logo.png"), fit: BoxFit.cover),
+          ),
+    child: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -49,6 +55,8 @@ class HomePage extends StatelessWidget {
             )
             ],
           ),
+    ),
+    ),
     );
   }
 }

@@ -10,7 +10,7 @@ class MyAppState extends ChangeNotifier {
   
 
   var curr = 3;
-
+  var coral = 0;
 
   Widget currPage = HomePage();
 
@@ -33,6 +33,17 @@ class MyAppState extends ChangeNotifier {
 
   List<WordPair> getFavorite() {
     return favorites;
+  }
+
+  void incCoral() {
+    coral++;
+    notifyListeners();
+  } 
+
+
+
+  int getCoral() {
+    return coral;
   }
 
   String hi() {
