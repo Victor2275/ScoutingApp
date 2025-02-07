@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/BotStatsPage.dart';
+import 'package:flutter_application_1/pages/DispBotStatsPage.dart';
 import 'package:flutter_application_1/pages/HomePage.dart';
 import 'package:flutter_application_1/pages/MatchScoutingPage.dart';
 import 'package:flutter_application_1/pages/PicklistPage.dart';
@@ -47,5 +48,22 @@ static Route routeToPicklist() {
   return createRoute(PicklistPage());
 }
 
+static Route routeToDispBotStats(int teamNumber) {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => DispBotStatsPage(teamNumber),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      const begin = Offset(0.0, 1.0);
+      const end = Offset.zero;
+      const curve = Curves.easeOut;
+
+      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+      return SlideTransition(
+        position: animation.drive(tween),
+        child: child,
+      );
+    },
+  );
+}
 
 }

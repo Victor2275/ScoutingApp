@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class BigCard extends StatelessWidget {
   const BigCard({
     super.key,
-    required this.pair,
+    required this.num,
   });
 
-  final WordPair pair;
+  final int num;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class BigCard extends StatelessWidget {
       child: Padding(
  
         padding: const EdgeInsets.all(20.0),
-        child: Text(pair.asLowerCase, style: style),
+        child: Text(num.toString()),
 
       ),
     );
